@@ -7917,7 +7917,7 @@ static void build_backtrace(JSContext *ctx, JSValueConst error_obj,
             rt->in_prepare_stack_trace = TRUE;
 
             saved_exception = rt->current_exception;
-            rt->current_exception = JS_NULL;
+            rt->current_exception = JS_UNINITIALIZED;
 
             prepare = JS_GetProperty(ctx, ctx->error_ctor,
                                      JS_ATOM_prepareStackTrace);
