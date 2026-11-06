@@ -2305,7 +2305,7 @@ void JS_Suspend(JSRuntime *rt, JSRuntimeThreadState *state)
     memcpy(&s->job_list, &rt->job_list, sizeof(rt->job_list));
 
     rt->stack_top = 0;
-    rt->current_exception = JS_NULL;
+    rt->current_exception = JS_UNINITIALIZED;
     rt->in_prepare_stack_trace = FALSE;
     rt->current_stack_frame = NULL;
     init_list_head(&rt->job_list);
