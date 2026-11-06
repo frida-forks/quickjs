@@ -11226,7 +11226,7 @@ static JSValue JS_GetGlobalVar(JSContext *ctx, JSAtom prop,
             JSValue saved_exception, replacement_res;
 
             saved_exception = rt->current_exception;
-            rt->current_exception = JS_NULL;
+            rt->current_exception = JS_UNINITIALIZED;
 
             replacement_res = af->get(ctx, prop, af->opaque);
             if (!JS_IsUndefined(replacement_res) && !JS_IsException(replacement_res)) {
